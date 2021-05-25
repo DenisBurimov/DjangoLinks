@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'links/main.css' %}">
+    <title>{{page_title}}</title>
+</head>
+<body>
+    <header>
+        <div class="container box">
+            <div class="right-bar">
+                <a href="/"><img src="/pictures/logo.png" alt="Logo" width="96" height="148"></a>
+                <a href="/" id="Name">Отру.бим</a>
+            </div>
+            <div class="left-bar">
+                <div class="button"><a href="/">Home</a></div>
+                <div class="button"><a href="/about">About</a></div>
+                <div class="button"><a href="#">Profile</a></div>
+                <div class="button"><a href="/links">Links</a></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="container bottom-menu">
+            <div class="button"><a href="#">Home</a></div>
+            <div class="button"><a href="#">About</a></div>
+            <div class="button"><a href="#">Profile</a></div>
+            <div class="button"><a href="#">Links</a></div>
+        </div>
+    </footer>
+
+</body>
+</html>

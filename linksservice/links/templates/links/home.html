@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-</head>
-<body>
-    <h1>Home Page</h1>
-</body>
-</html>
+{% extends 'links/pattern.html' %}
+{% block content %}
+    <div class="home-block">
+        <p id="main-title">Отру.бим</p>
+        <p id="main-title-desc">быстро обрубим ссылку</p>
+        <div class="button main-button"><a href="/links">Кабинет пользователя</a></div>
+    </div>
+{% endblock content %}

@@ -8,10 +8,16 @@ def home(request):
 
     return render(request, 'links/home.html', data)
 
-def contacts(request):
+def links(request):
     data = {
-        'page_title' : 'Contact Us',
-        'contacts' : 'denysburimov@gmail.com'
+        'page_title' : 'Links',
     }
 
-    return render(request, 'links/contacts.html', data)
+    return render(request, 'links/links.html', data)
+
+def about(request):
+    data = {
+        'page_title' : 'About',
+    }
+
+    return render(request, 'links/about.html', data)
