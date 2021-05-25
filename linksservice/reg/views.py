@@ -1,8 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import UserRegisterForm
 
 def registration(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Аккаунт для {username} создан')
+            return redirect('home')
+    else:
+        form = UserRegisterForm()
+
     data = {
         'page_title' : 'Registration',
+        'form' : form
     }
 
     return render(request, 'reg/registration.html', data)

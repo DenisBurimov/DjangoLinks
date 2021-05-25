@@ -1,18 +1,14 @@
 {% extends 'links/pattern.html' %}
 {% block content %}
     <div class="home-block">
-        <p class="sub-title">Регистрация</p>
-        <form method="post" class="form-one">
-            <label for="username">Имя пользователя:</label>
-            <br>
-            <input id="username" class="input-field" type="text" placeholder="Введите имя пользователя">
-            <label for="email">Email:</label>
-            <br>
-            <input id="email" class="input-field" type="text" placeholder="Введите email">
-            <label for="password">Ваш пароль:</label>
-            <br>
-            <input id="password" class="input-field" type="text" placeholder="Задайте пароль">
+        <h1>Registration testing</h1>
+        <form method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Регистрация</legend>
+                {{ form }}
+            </fieldset>
+            <button>Зарегистрироваться</button>
         </form>
-        <div class="button main-button"><a href="#">Зарегистрироваться</a></div>
     </div>
 {% endblock content %}
