@@ -12,14 +12,14 @@
     <header>
         <div class="container box">
             <div class="right-bar">
-                <a href="/"><img src="/pictures/logo.png" alt="Logo" width="96" height="148"></a>
-                <a href="/" id="Name">Отру.бим</a>
+                <a href="{% url 'home' %}"><img src="/pictures/logo.png" alt="Logo" width="96" height="148"></a>
+                <a href="{% url 'home' %}" id="Name">Отру.бим</a>
             </div>
             <div class="left-bar">
-                <div class="button"><a href="/">Home</a></div>
-                <div class="button"><a href="/about">About</a></div>
-                <div class="button"><a href="/profile">Profile</a></div>
-                <div class="button"><a href="/links">Links</a></div>
+                <div class="button"><a href="{% url 'home' %}">Home</a></div>
+                <div class="button"><a href="{% url 'about' %}">About</a></div>
+                <div class="button"><a href="{% url 'profile' %}">Profile</a></div>
+                <div class="button"><a href="{% url 'links' %}">Links</a></div>
             </div>
         </div>
     </header>
@@ -41,9 +41,9 @@
 
     <footer>
         <div class="container bottom-menu">
-            <div class="button"><a href="/registration">Register</a></div>
-            <div class="button"><a href="/login">Login</a></div>
-            <div class="button"><a href="logout">Logout</a></div>
+            <div class="button"><a href="{% url 'registration' %}">Register</a></div>
+            <div class="button"><a href="{% url 'login' %}">Login</a></div>
+            <div class="button"><a href="{% url 'logout' %}">Logout</a></div>
         </div>
     </footer>
 
