@@ -18,7 +18,16 @@
             <div class="left-bar">
                 <div class="button"><a href="{% url 'home' %}">Home</a></div>
                 <div class="button"><a href="{% url 'about' %}">About</a></div>
+
+
+                {% if not user.is_authenticated %}
+                <div class="button"><a href="{% url 'login' %}">Login</a></div>
+                <div class="button"><a href="{% url 'registration' %}">Register</a></div>
+                {% else %}
                 <div class="button"><a href="{% url 'profile' %}">Profile</a></div>
+                <div class="button"><a href="{% url 'logout' %}">Logout</a></div>
+                {% endif %}
+
                 <div class="button"><a href="{% url 'links' %}">Links</a></div>
             </div>
         </div>
