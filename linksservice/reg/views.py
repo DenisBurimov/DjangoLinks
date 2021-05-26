@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm
+from django.contrib.auth.decorators import login_required
 
 
 def registration(request):
@@ -21,6 +22,7 @@ def registration(request):
 
     return render(request, 'reg/registration.html', data)
 
+@login_required
 def profile(request):
     data = {
         'page_title' : 'Profile',

@@ -136,3 +136,4 @@ MEDIA_URL = '/pictures/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
 
 LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
