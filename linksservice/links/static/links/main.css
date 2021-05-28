@@ -48,7 +48,7 @@ header {
 
 .button {
     height: 32px;
-    width: 64px;
+    min-width: 64px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -121,3 +121,5 @@ footer a:hover {color: silver; text-decoration: none;}
     flex-direction: column;
     justify-content: center;
 }
+
+#logged-in {margin-bottom: 35px}
