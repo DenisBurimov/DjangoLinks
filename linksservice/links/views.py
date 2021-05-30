@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import pyshorteners
 
 def home(request):
     data = {
@@ -14,6 +15,18 @@ def links(request):
     }
 
     return render(request, 'links/links.html', data)
+
+def add(request):
+    full_link = request.POST["full_link"]
+    cut = pyshorteners.Shortener()
+    cutted_link = cut.tinyurl.short(full_link)
+
+    data = {
+        'page_title': 'One',
+        'cutted_link': cutted_link
+    }
+
+    return render(request, 'links/add.html', data)
 
 def about(request):
     data = {
