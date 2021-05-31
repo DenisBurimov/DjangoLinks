@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'links/pattern.html' %}
+{% block content %}
+    <div class="home-block">
+        <p class="sub-title">Создание ссылок</p>
+        <form action="add" method="post" class="form-one">
+            {% csrf_token %}
+            <label for="full_link">Полная ссылка:</label>
+            <br>
+            <input id="full_link" class="input-field" type="text" name="full_link" placeholder="Введите полную ссылку">
+            <label for="cutted_link">Сокращённая ссылка:</label>
+            <br>
+            <input id="cutted_link" class="input-field" type="text" name="cutted_link" placeholder="Введите сокращение">
+            <input type="submit" class="button main-button">
+        </form>
+    </div>
+
+{% endblock content %}

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import CreateView
 import pyshorteners
 from .models import Link
 
@@ -27,10 +28,12 @@ def add(request):
     full_link = request.POST["full_link"]
     cut = pyshorteners.Shortener()
     cutted_link = cut.tinyurl.short(full_link)
+    available_links = Link.objects.filter(author=request.user)
 
     data = {
         'page_title': 'One',
-        'cutted_link': cutted_link
+        'cutted_link': cutted_link,
+        'available_links' : available_links
     }
 
     return render(request, 'links/add.html', data)
@@ -41,3 +44,11 @@ def about(request):
     }
 
     return render(request, 'links/about.html', data)
+
+class LinkView(CreateView):
+    model = Link
+    fields = ['full_link', 'short_link', 'author']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)

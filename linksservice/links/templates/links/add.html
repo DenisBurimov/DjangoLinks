@@ -3,4 +3,19 @@
     <div class="home-block">
         <p>Result: {{cutted_link}}</p>
     </div>
+    <div class="home-block">
+        {% if user.is_authenticated %}
+            <div>
+                <p class="sub-title">Другие доступные ссылки:</p>
+                {% for link in available_links %}
+                    <p>{{link.author}}</p>
+                    <p>{{link.full_link}}</p>
+                    <p>{{link.short_link}}</p>
+                    <hr>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h3>Авторизуйтесь, чтобы увидеть доступные ссылки</h3>
+        {% endif %}
+    </div>
 {% endblock content %}
