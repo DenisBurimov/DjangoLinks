@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import pyshorteners
+from .models import Link
 
 def home(request):
     data = {
@@ -10,8 +11,14 @@ def home(request):
     return render(request, 'links/home.html', data)
 
 def links(request):
+    if request.user.is_authenticated:
+        available_links = Link.objects.filter(author=request.user)
+    else:
+        available_links = Link.objects.all()
+
     data = {
         'page_title' : 'Links',
+        'available_links': available_links,
     }
 
     return render(request, 'links/links.html', data)

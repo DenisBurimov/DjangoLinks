@@ -12,5 +12,19 @@
             <input id="cutted_link" class="input-field" type="text" name="cutted_link" placeholder="Введите сокращение">
             <input type="submit" class="button main-button">
         </form>
+        {% if user.is_authenticated %}
+            <div>
+                <p class="sub-title">Доступные ссылки:</p>
+                {% for link in available_links %}
+                    <p>{{link.author}}</p>
+                    <p>{{link.full_link}}</p>
+                    <p>{{link.short_link}}</p>
+                    <hr>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h3>Авторизуйтесь, чтобы увидеть доступные ссылки</h3>
+        {% endif %}
     </div>
+
 {% endblock content %}
