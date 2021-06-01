@@ -5,17 +5,14 @@
             <p class="sub-title">Создание ссылок</p>
             {% csrf_token %}
             {{form}}
-            <input type="submit" value="Получить ссылку">
+            <input class="button main-button submit_button" type="submit" value="Получить ссылку">
         </form>
 
         {% if user.is_authenticated %}
             <div>
-                <p class="sub-title">Доступные ссылки:</p>
+                <p class="sub-title">{{user.username}}, ваши доступные ссылки:</p>
                 {% for link in available_links %}
-                    <p>{{link.author}}</p>
-                    <p>{{link.full_link}}</p>
-                    <p>{{link.short_link}}</p>
-                    <hr>
+                    <p>Ссылка - <a href="{{link.full_link}}">/link/{{link.nickname}}/</a></p>
                 {% endfor %}
             </div>
         {% else %}

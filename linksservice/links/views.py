@@ -15,10 +15,10 @@ def links(request):
     if request.method == "POST":
         form = CreateLink(request.POST)
         if form.is_valid():
-
             form.save()
             obj = Link()
             obj.full_link = form.cleaned_data.get('full_link')
+            obj.nickname = form.cleaned_data.get('nickname')
             obj.author = request.user
             obj.save()
             return redirect('links')

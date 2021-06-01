@@ -125,3 +125,24 @@ footer a:hover {color: silver; text-decoration: none;}
 #logged-in {margin-bottom: 35px}
 
 #link_submit {margin-top: 35px; border: 0; color: white}
+
+.form-field {
+    height: 39px;
+    width: 100%;
+    margin: 15px 0;
+    padding-left: 15px;
+    border: 1px solid #5f788a;
+    border-radius: 5px;
+}
+
+.submit_button {
+    height: 60px;
+    width: 280px;
+    margin: 25px 0;
+    color: white;
+    background: #29f837;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 15px;
+}
