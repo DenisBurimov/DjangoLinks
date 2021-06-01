@@ -1,13 +1,17 @@
 {% extends 'links/pattern.html' %}
 {% block content %}
     <div class="home-block">
-        <form action="" method="post">
-            <p class="sub-title">Создание ссылок</p>
+        <p class="sub-title">Создание ссылок</p>
+        <form action="add" method="post" class="form-one">
             {% csrf_token %}
-            {{form}}
-            <input type="submit" value="Получить ссылку">
+            <label for="full_link">Полная ссылка:</label>
+            <br>
+            <input id="full_link" class="input-field" type="text" name="full_link" placeholder="Введите полную ссылку">
+            <label for="cutted_link">Сокращённая ссылка:</label>
+            <br>
+            <input id="cutted_link" class="input-field" type="text" name="cutted_link" placeholder="Введите сокращение">
+            <input type="submit" class="button main-button">
         </form>
-
         {% if user.is_authenticated %}
             <div>
                 <p class="sub-title">Доступные ссылки:</p>

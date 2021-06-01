@@ -123,3 +123,5 @@ footer a:hover {color: silver; text-decoration: none;}
 }
 
 #logged-in {margin-bottom: 35px}
+
+#link_submit {margin-top: 35px; border: 0; color: white}
