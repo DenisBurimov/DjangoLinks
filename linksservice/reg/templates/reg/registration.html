@@ -1,14 +1,13 @@
 {% extends 'links/pattern.html' %}
 {% block content %}
     <div class="home-block">
-        <h1>Registration testing</h1>
-        <form method="post">
+        <form method="post" id="registration-form">
             {% csrf_token %}
-            <fieldset>
-                <legend>Регистрация</legend>
+            <fieldset id="r_form" class="form-fieldset">
+                <p class="logged-in">Регистрация</p>
                 {{ form }}
             </fieldset>
-            <button>Зарегистрироваться</button>
+            <button  class="button main-button submit_button">Зарегистрироваться</button>
         </form>
     </div>
 {% endblock content %}

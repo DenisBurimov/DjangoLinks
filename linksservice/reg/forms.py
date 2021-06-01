@@ -4,7 +4,9 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
 
 class UserRegisterForm(UserCreationForm):
-    email = forms.EmailField()
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-field', 'placeholder': 'Введите имя пользователя'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-field', 'placeholder': 'Введите email'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-field', 'placeholder': 'Введите пароль'}))
 
     class Meta:
         model = User
@@ -15,7 +17,8 @@ class UserRegisterForm(UserCreationForm):
         del self.fields['password2']
 
 class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-field'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-field'}))
 
     class Meta:
         model = User

@@ -97,6 +97,31 @@ footer a:hover {color: silver; text-decoration: none;}
 
 }
 
+.profile-block {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-fieldset {
+    width: 70%;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #main-title {font-size: 70px; font-weight: 700}
 #main-title-desc {
     margin: 15px;
@@ -122,11 +147,24 @@ footer a:hover {color: silver; text-decoration: none;}
     justify-content: center;
 }
 
-#logged-in {margin-bottom: 35px}
+.logged-in {margin-bottom: 35px; font-weight: 700; font-size: 23px;}
+
+.user-name {margin: 30px 0; font-weight: 700; font-size: 21px;}
+
+.user-mail {margin: 0 0 30px 0; font-weight: 700; font-size: 21px;}
 
 #link_submit {margin-top: 35px; border: 0; color: white}
 
 .form-field {
+    height: 39px;
+    width: 100%;
+    margin: 15px 0;
+    padding-left: 15px;
+    border: 1px solid #5f788a;
+    border-radius: 5px;
+}
+
+.profile-form input {
     height: 39px;
     width: 100%;
     margin: 15px 0;
@@ -145,4 +183,12 @@ footer a:hover {color: silver; text-decoration: none;}
     font-weight: 700;
     border: none;
     border-radius: 15px;
+}
+
+#registration-form {
+    width: 50%;
+    padding-left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
